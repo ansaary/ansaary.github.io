@@ -187,7 +187,3 @@ html, body {
 #search-box-list li:active {
     background-color: rgba(100, 100, 100, .35);
 }
-
-img {
-    display: none;
-}

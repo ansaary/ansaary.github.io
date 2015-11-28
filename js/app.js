@@ -670,12 +670,6 @@ function doesFileExist(urlToFile) {
     return xhr.status != "404";
 }
 
-$(document).ready(function() {
-    $('img').load(function() {
-        $(this).fadeIn(300);
-    });
-});
-
 ////return an array of objects according to key, value, or key and value matching
 //function getObjects(obj, key, val) {
 //    var objects = [];
