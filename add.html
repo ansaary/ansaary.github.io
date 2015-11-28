@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new Data</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        button,
+        input {
+            padding: 3px;
+            width: 100%;
+            box-sizing: border-box;
+            color: #333;
+        }
+        fieldset {
+            width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border-color: #ddd;
+        }
+        table {
+            width: 100%;
+        }
+        label,
+        legend {
+            color: #333;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var fields = ['id', 'name', 'mobile', 'telephone', 'email', 'facebook', 'birthday', 'address', 'study', 'job', 'mother', 'husband', 'wife', 'notes'];
+            $.getJSON('json/data.json', function (data) {
+                $('#output').text(JSON.stringify(data));
+                $('#save').click(function () {
+                    var obj = {}, $e;
+                    fields.forEach(function (e) {
+                        $e = $('#'+e);
+                        if ($e.val()) obj[e] = $e.val();
+                    });
+                    data[data.length] = obj;
+                    var output = JSON.stringify(data);
+                    $('#output').text(output);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Add New Data</legend>
+        <table>
+            <tr>
+                <td><label for="id">Id</label></td>
+                <td><input type="text" id="id"></td>
+            </tr>
+            <tr>
+                <td><label for="name">Name</label></td>
+                <td><input type="text" id="name"></td>
+            </tr>
+            <tr>
+                <td><label for="mobile">Mobile</label></td>
+                <td><input type="text" id="mobile"></td>
+            </tr>
+            <tr>
+                <td><label for="telephone">Telephone</label></td>
+                <td><input type="text" id="telephone"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email</label></td>
+                <td><input type="text" id="email"></td>
+            </tr>
+            <tr>
+                <td><label for="facebook">Facebook</label></td>
+                <td><input type="text" id="facebook"></td>
+            </tr>
+            <tr>
+                <td><label for="birthday">Birthday</label></td>
+                <td><input type="text" id="birthday"></td>
+            </tr>
+            <tr>
+                <td><label for="address">Address</label></td>
+                <td><input type="text" id="address"></td>
+            </tr>
+            <tr>
+                <td><label for="study">Study</label></td>
+                <td><input type="text" id="study"></td>
+            </tr>
+            <tr>
+                <td><label for="job">Job</label></td>
+                <td><input type="text" id="job"></td>
+            </tr>
+            <tr>
+                <td><label for="mother">Mother</label></td>
+                <td><input type="text" id="mother"></td>
+            </tr>
+            <tr>
+                <td><label for="husband">Husband</label></td>
+                <td><input type="text" id="husband"></td>
+            </tr>
+            <tr>
+                <td><label for="wife">Wife</label></td>
+                <td><input type="text" id="wife"></td>
+            </tr>
+            <tr>
+                <td><label for="notes">Notes</label></td>
+                <td><input type="text" id="notes"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button id="save">Save</button></td>
+            </tr>
+        </table>
+    </fieldset>
+    <div id="output"></div>
+</body>
+</html>

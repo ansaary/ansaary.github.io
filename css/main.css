@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.node {
+    cursor: pointer;
+}
+
+.overlay{
+    background-color:#EEE;
+    /*width: 100%;*/
+    /*height: 100%;*/
+}
+html, body {
+    overflow: hidden;
+}
+
+.node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+
+.node text {
+    font-size:14px;
+    font-family: sans-serif;
+}
+
+.selected circle {
+    stroke: #333;
+    fill: #999 !important;
+}
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+}
+
+.templink {
+    fill: none;
+    stroke: red;
+    stroke-width: 3px;
+}
+
+.ghostCircle.show{
+    display:block;
+}
+
+.ghostCircle, .activeDrag .ghostCircle{
+    display: none;
+}
+
+#data-card {
+    position: fixed;
+    left: 5px;
+    bottom: 5px;
+    width: 400px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,.8);
+}
+
+.hidden {
+    display: none;
+}
+
+#data-card table {
+    width: 100%;
+    color: #fff;
+}
+
+#data-card table table tr td:nth-child(1){
+    border-right: solid 1px #fff;
+    padding-right: 5px;
+}
+#data-card table table tr td:nth-child(2){
+    width: 100%;
+    padding-left: 5px;
+}
+
+#data-card-name {
+    border-bottom: solid 1px #fff;
+    padding: 7px 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+#data-card-picture {
+    width: 100px;
+    text-align: center;
+    vertical-align: top;
+    border-right: solid 1px #fff;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+#data-card-picture div.container {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 20px;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+}
+
+#data-card-picture img {
+    width: inherit;
+    min-height: inherit;
+}
+
+#search-box {
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,.8);
+    transition: width .3s ease, height .3s ease;
+    overflow: hidden;
+}
+
+#search-box.open {
+    width: 500px;
+    height: auto;
+    max-height: 300px;
+    min-height: 70px;
+    overflow-y: auto;
+}
+
+#search-box img {
+    margin: 10px;
+    cursor: pointer;
+    float: left;
+    position: absolute;
+}
+
+#search-box-input {
+    position: absolute;
+    display: block;
+    float: left;
+    margin: 10px;
+    left: 70px;
+    width: 410px;
+    height: 50px;
+    border: none;
+    font-weight: 400;
+    border-bottom: solid 1px #646464;
+    font-size: 20px;
+    background: none;
+    color: #fff;
+    direction: rtl;
+    padding: 10px;
+}
+
+#search-box-input::-webkit-search-decoration,
+#search-box-input::-webkit-search-cancel-button,
+#search-box-input::-webkit-search-results-button,
+#search-box-input::-webkit-search-results-decoration {
+    display: none;
+}
+#search-box-input:focus {
+    outline: none;
+}
+
+#search-box-list {
+    margin-top: 70px;
+    padding: 10px;
+}
+
+#search-box-list li {
+    color: #ccc;
+    text-align: right;
+    padding: 10px;
+    cursor: default;
+}
+
+#search-box-list li:hover {
+    background-color: rgba(100, 100, 100, .25);
+}
+
+#search-box-list li.active {
+    background-color: rgba(100, 100, 100, .35);
+}
+
+#search-box-list li:active {
+    background-color: rgba(100, 100, 100, .35);
+}
